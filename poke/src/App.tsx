@@ -30,19 +30,19 @@ const App = () => {
   );
 
   return (
-    <div>
+    <div className="p-4">
       <input
         type="text"
         placeholder="Search Pokémon"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        style={{ margin: '20px', padding: '10px', fontSize: '16px' }}
+        className="w-full p-2 mb-4 text-lg border border-gray-300 rounded-lg"
       />
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div className="flex flex-wrap justify-center">
         {filteredPokemon.map((pokemon, index) => (
-          <div key={index} style={{ margin: '10px', textAlign: 'center' }}>
-            <img src={pokemon.image} alt={pokemon.name} />
-            <p>{pokemon.name}</p>
+          <div className="m-4 text-center">
+            <img src={pokemon.image} alt="" className="w-24 h-24 mx-auto" />
+            <p className="mt-2 text-lg font-semibold capitalize">{pokemon.name}</p>
           </div>
         ))}
       </div>
